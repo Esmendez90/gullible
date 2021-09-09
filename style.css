@@ -87,6 +87,22 @@ label {
   border-color: rgb(173, 126, 126);
 }
 
-i:hover {
-  color: rgb(28, 195, 51) !important;
+.cameraIcon:hover {
+  color: rgb(137, 195, 28) !important;
+}
+
+.logos {
+    position: relative;
+    top: 450px;
+    left: 44%;
+}
+
+.gLIcons {
+    font-size:70px;
+    margin: 0 5px;
+    color: rgb(49, 26, 58);
+}
+
+.gLIcons:hover {
+    color: rgb(207, 70, 189);
 }

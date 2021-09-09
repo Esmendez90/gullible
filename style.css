@@ -4,8 +4,12 @@ body {
   background-color: pink;
   background-image: linear-gradient(
     to right,
+    rgb(177, 76, 93),
     rgb(240, 103, 126),
-    rgb(37, 216, 216)
+    rgb(177, 76, 93),
+    rgb(31, 168, 168),
+    rgb(37, 216, 216),
+    rgb(31, 168, 168)
   );
 }
 .outer {
@@ -17,12 +21,13 @@ body {
   background-color: pink;
   background-image: linear-gradient(
     to right,
+    rgb(177, 76, 93),
     rgb(240, 103, 126),
-    rgb(37, 216, 216)
+    rgb(177, 76, 93),
+    rgb(31, 168, 168),
+    rgb(37, 216, 216),
+    rgb(31, 168, 168)
   );
-  border-style: solid;
-  border-width: 0.2mm;
-  border-color: rgb(145, 79, 79);
   box-shadow: rgb(209 209 213) 15px 15px 55px;
 }
 .inner {
@@ -35,17 +40,18 @@ body {
   background-color: pink;
   background-image: linear-gradient(
     to right,
+    rgb(177, 76, 93),
     rgb(240, 103, 126),
-    rgb(37, 216, 216)
+    rgb(177, 76, 93),
+    rgb(31, 168, 168),
+    rgb(37, 216, 216),
+    rgb(31, 168, 168)
   );
-  border-style: solid;
-  border-width: 0.2mm;
-  border-color: rgb(145, 79, 79);
   box-shadow: rgb(209 209 213) 15px 15px 55px;
 }
 
 .search_form {
-  transform: translate(10%, 135px);
+  transform: translate(11%, 125px);
 }
 
 #movie_title {

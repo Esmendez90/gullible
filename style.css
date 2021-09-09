@@ -1,20 +1,29 @@
 body {
-    margin: 0;
-    display: block;
-    background-color: pink;
-    background-image: linear-gradient(to right, rgb(240, 103, 126) , rgb(37, 216, 216));
+  margin: 0;
+  display: block;
+  background-color: pink;
+  background-image: linear-gradient(
+    to right,
+    rgb(240, 103, 126),
+    rgb(37, 216, 216)
+  );
 }
 .outer {
   position: relative;
   left: 15%;
-  transform: translate(0%, 35%);  
+  transform: translate(0%, 35%);
   width: 70%;
   height: 550px;
   background-color: pink;
-  background-image: linear-gradient(to right, rgb(240, 103, 126) , rgb(37, 216, 216));
+  background-image: linear-gradient(
+    to right,
+    rgb(240, 103, 126),
+    rgb(37, 216, 216)
+  );
   border-style: solid;
   border-width: 0.2mm;
   border-color: rgb(145, 79, 79);
+  box-shadow: rgb(209 209 213) 15px 15px 55px;
 }
 .inner {
   position: absolute;
@@ -24,8 +33,54 @@ body {
   top: 22.5%;
   left: 15%;
   background-color: pink;
-  background-image: linear-gradient(to right, rgb(240, 103, 126) , rgb(37, 216, 216));
+  background-image: linear-gradient(
+    to right,
+    rgb(240, 103, 126),
+    rgb(37, 216, 216)
+  );
   border-style: solid;
   border-width: 0.2mm;
   border-color: rgb(145, 79, 79);
+  box-shadow: rgb(209 209 213) 15px 15px 55px;
+}
+
+.search_form {
+  transform: translate(10%, 135px);
+}
+
+#movie_title {
+  width: 300px;
+  height: 45px;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: rgb(173, 126, 126);
+  box-shadow: rgb(209 209 213) 15px 15px 55px;
+  text-align: center;
+  font-family: "Rock Salt", cursive;
+}
+
+label {
+  font-size: 25px;
+  font-family: "Rock Salt", cursive;
+}
+
+#searchBtn {
+  width: 80px;
+  height: 50px;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 10px;
+  box-shadow: rgb(209 209 213) 15px 15px 55px;
+  transform: translate(10px, 9px);
+  overflow: hidden;
+}
+
+#searchBtn:hover {
+  box-shadow: #9b0808 10px 5px 20px;
+  border-color: rgb(173, 126, 126);
+}
+
+i:hover {
+  color: rgb(28, 195, 51) !important;
 }

@@ -94,15 +94,16 @@ label {
 .logos {
     position: relative;
     top: 450px;
-    left: 44%;
+    left: 42%;
 }
 
 .gLIcons {
     font-size:70px;
-    margin: 0 5px;
+    margin: 0 10px;
     color: rgb(49, 26, 58);
 }
 
 .gLIcons:hover {
     color: rgb(207, 70, 189);
+    box-shadow: #9b0808 10px 5px 20px;
 }

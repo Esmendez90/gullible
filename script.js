@@ -24,17 +24,17 @@ function displayMovieData(data) {
   movieCard.style.display = "block";
   $("#movieCard").append(
     `
-    <div id="movieInfoCard" class="card">
-      <img src="${Poster}" id="poster" class="card-img-top" alt=${Title} - Movie Poster />
-        <div class="card-body">
-          <p class="card-text">Title: ${Title}</p>
-           <p class="card-text">Genre: ${Genre}</p>
-           <p class="card-text">Actors: ${Actors}</p>
-           <p class="card-text">Year: ${Year}</p>
-          <p class="card-text">Rated: ${Rated}</p>
-          <p class="card-text">Director: ${Director}</p>
-          <p class="card-text">Plot: ${Plot}</p>
-          <p class="card-text">Runtime: ${Runtime}</p>
+    <div id="movieInfoCard" >
+      <img src="${Poster}" id="poster"  alt=${Title} - Movie Poster />
+        <div class="movieData">
+          <p class="movieTitle data">Title: ${Title}</p>
+           <p class="movieGenre data">Genre: ${Genre}</p>
+           <p class="movieActors data">Actors: ${Actors}</p>
+           <p class="movieYear data">Year: ${Year}</p>
+          <p class="movieRated data">Rated: ${Rated}</p>
+          <p class="movieDirector data">Director: ${Director}</p>
+          <p class="moviePlot data">Plot: ${Plot}</p>
+          <p class="movieRuntime data">Runtime: ${Runtime}</p>
         </div>
     </div>
     `

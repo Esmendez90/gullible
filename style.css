@@ -1,3 +1,5 @@
+
+
 body {
   margin: 0;
   display: block;
@@ -95,6 +97,7 @@ label {
   position: relative;
   top: 450px;
   left: 42%;
+  width: fit-content;
 }
 
 .gLIcons {
@@ -110,9 +113,23 @@ label {
 
 #movieCard {
   position: absolute;
-  left: 35%;
-  top: 0%;
-  width: 400px;
-  height: 500px;
-  padding: 10px;
+  left: 25%;
+  top: 30%;
+  display: none;
+  width: 50%;
+  height: fit-content;
+}
+
+#movieInfoCard {
+  padding: 12px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#poster {
+  float: left;
+  clear: right;
+  width: 30%;
+  height: 35%;
+  margin-right: 10px;
 }

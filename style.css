@@ -132,4 +132,9 @@ label {
   width: 30%;
   height: 35%;
   margin-right: 10px;
+  box-shadow: rgb(204, 202, 202) 5px 3px 8px;
+}
+
+.data {
+  text-shadow: black 2px 2px;
 }

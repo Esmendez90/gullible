@@ -1,5 +1,6 @@
 console.log("is this even working?");
 let movieCard = document.getElementById("movieCard");
+let innerDiv = document.querySelector(".inner");
 
 $("#searchBtn").on("click", function (event) {
   event.preventDefault();
@@ -21,6 +22,7 @@ function apiCall(title) {
 function displayMovieData(data) {
   const { Title, Actors, Genre, Year, Rated, Director, Runtime, Plot, Poster } =
     data;
+  innerDiv.style.opacity = -1;
   movieCard.style.display = "block";
   $("#movieCard").append(
     `
@@ -28,14 +30,15 @@ function displayMovieData(data) {
       <img src="${Poster}" id="poster"  alt=${Title} - Movie Poster />
         <div class="movieData">
           <p class="movieTitle data">Title: ${Title}</p>
-           <p class="movieGenre data">Genre: ${Genre}</p>
-           <p class="movieActors data">Actors: ${Actors}</p>
-           <p class="movieYear data">Year: ${Year}</p>
+          <p class="movieGenre data">Genre: ${Genre}</p>
+          <p class="movieActors data">Actors: ${Actors}</p>
+          <p class="movieYear data">Year: ${Year}</p>
           <p class="movieRated data">Rated: ${Rated}</p>
           <p class="movieDirector data">Director: ${Director}</p>
           <p class="moviePlot data">Plot: ${Plot}</p>
           <p class="movieRuntime data">Runtime: ${Runtime}</p>
         </div>
+        <button>Back</button>
     </div>
     `
   );

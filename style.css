@@ -73,7 +73,7 @@ label {
   font-family: "Rock Salt", cursive;
 }
 
-#searchBtn {
+#searchBtn, #backBtn {
   width: 80px;
   height: 50px;
   border-width: 3px;
@@ -131,10 +131,29 @@ label {
   clear: right;
   width: 30%;
   height: 35%;
-  margin-right: 10px;
+  margin-right: 20px;
+  margin-bottom: 5px;
   box-shadow: rgb(204, 202, 202) 5px 3px 8px;
 }
 
 .data {
   text-shadow: black 2px 2px;
+}
+
+.backBtnContainer {
+text-align: right;
+}
+
+#backBtn {
+  font-family: "Rock Salt", cursive;
+  color: rgb(207, 70, 189);
+  box-shadow: rgb(209 209 213) 5px 5px 10px;
+  transform: translate(0,0);
+}
+
+#backBtn:hover {
+  box-shadow: #9b0808 10px 5px 20px;
+  border-color: rgb(173, 126, 126);
+  color: rgb(137, 195, 28);
+  text-shadow: black 1px 1px;
 }

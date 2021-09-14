@@ -29,7 +29,7 @@ function displayMovieData(data) {
     <div id="movieInfoCard" >
       <img src="${Poster}" id="poster"  alt=${Title} - Movie Poster />
         <div class="movieData">
-          <p class="movieTitle data">Title: ${Title}</p>
+          <h3 class="movieTitle data" style="text-align: center; margin-bottom: 20px;">${Title}</h3>
           <p class="movieGenre data">Genre: ${Genre}</p>
           <p class="movieActors data">Actors: ${Actors}</p>
           <p class="movieYear data">Year: ${Year}</p>
@@ -38,8 +38,14 @@ function displayMovieData(data) {
           <p class="moviePlot data">Plot: ${Plot}</p>
           <p class="movieRuntime data">Runtime: ${Runtime}</p>
         </div>
-        <button>Back</button>
+        <div class="backBtnContainer">
+        <button id="backBtn" onclick="location.reload()">Back</button>
+        </div>
     </div>
     `
   );
 }
+
+// function goBack() {
+//   location.reload();
+// }

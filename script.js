@@ -1,6 +1,7 @@
 console.log("is this even working?");
 let movieCard = document.getElementById("movieCard");
 let innerDiv = document.querySelector(".inner");
+let ytLinkName;
 
 $("#searchBtn").on("click", function (event) {
   event.preventDefault();
@@ -22,14 +23,17 @@ function apiCall(title) {
 function displayMovieData(data) {
   const { Title, Actors, Genre, Year, Rated, Director, Runtime, Plot, Poster } =
     data;
+
+  ytLinkName = Title.split(" ").join("+").toLowerCase();
   innerDiv.style.opacity = -1;
   movieCard.style.display = "block";
+
   $("#movieCard").append(
     `
     <div id="movieInfoCard" >
-      <img src="${Poster}" id="poster"  alt=${Title} - Movie Poster />
+      <img src="${Poster}" id="poster" onclick="youTubeTrailer()"  alt=${Title} - Movie Poster />
         <div class="movieData">
-          <h3 class="movieTitle data" style="text-align: center; margin-bottom: 20px;">${Title}</h3>
+          <h3 class="movieTitle data" onclick="youTubeTrailer()" style="text-align: center; margin-bottom: 20px;">${Title}</h3>
           <p class="movieGenre data">Genre: ${Genre}</p>
           <p class="movieActors data">Actors: ${Actors}</p>
           <p class="movieYear data">Year: ${Year}</p>
@@ -46,6 +50,8 @@ function displayMovieData(data) {
   );
 }
 
-// function goBack() {
-//   location.reload();
-// }
+function youTubeTrailer() {
+  console.log("watch trailer for: ", ytLinkName);
+  let youTubeLink = `https://www.youtube.com/results?search_query=${ytLinkName}+trailer`;
+  console.log(youTubeLink);
+}

@@ -157,3 +157,7 @@ text-align: right;
   color: rgb(137, 195, 28);
   text-shadow: black 1px 1px;
 }
+
+#poster:hover, .movieTitle:hover {
+  cursor: pointer;
+}

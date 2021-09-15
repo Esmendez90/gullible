@@ -1,4 +1,3 @@
-console.log("is this even working?");
 let movieCard = document.getElementById("movieCard");
 let innerDiv = document.querySelector(".inner");
 let watchTrailerMsg = document.getElementById("watchTrailer");
@@ -14,7 +13,7 @@ function apiCall(title) {
   axios
     .get(`http://www.omdbapi.com/?t=${title}&apikey=b00e7121`)
     .then((response) => {
-      console.log(response.data);
+      //console.log(response.data);
       let movieData = response.data;
       displayMovieData(movieData);
     })
@@ -32,9 +31,9 @@ function displayMovieData(data) {
   $("#movieCard").append(
     `
     <div id="movieInfoCard" >
+    <h3 class="movieTitle data" onmouseenter="showTrailerMsg()">${Title}</h3>
       <img src="${Poster}" id="poster" onmouseenter="showTrailerMsg()" alt=${Title} - Movie Poster />
         <div class="movieData">
-          <h3 class="movieTitle data" style="text-align: center; margin-bottom: 20px;">${Title}</h3>
           <p class="movieGenre data">Genre: ${Genre}</p>
           <p class="movieActors data">Actors: ${Actors}</p>
           <p class="movieYear data">Year: ${Year}</p>

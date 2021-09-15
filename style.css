@@ -130,8 +130,7 @@ label {
   clear: right;
   width: 30%;
   height: 35%;
-  margin-right: 20px;
-  margin-bottom: 5px;
+  margin: auto 20px 5px 20px;
   box-shadow: rgb(204, 202, 202) 5px 3px 8px;
 }
 
@@ -157,6 +156,19 @@ label {
   text-shadow: black 1px 1px;
 }
 
+.movieTitle {
+  font-size: 60px;
+  background: -webkit-linear-gradient(rgb(66, 194, 206), rgb(178, 67, 182));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center; 
+  margin-bottom: 20px;
+}
+
+.movieTitle:hover {
+  text-shadow: 0 0 2px rgb(37, 216, 216), 5px 5px 2px rgb(177, 76, 93);
+}
+
 #poster:hover,
 .movieTitle:hover {
   cursor: pointer;
@@ -164,13 +176,15 @@ label {
 
 #watchTrailer {
   position: absolute;
-  left: 6%;
-  top: 10%;
+  left: 7%;
+  top: 30%;
   height: 30px;
   width: 145px;
   visibility: hidden;
   background-color: white;
+  font-weight: bolder;
   color: green;
+  text-shadow: black 0.5px 0.5px;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;

@@ -1,6 +1,7 @@
 console.log("is this even working?");
 let movieCard = document.getElementById("movieCard");
 let innerDiv = document.querySelector(".inner");
+let watchTrailerMsg = document.getElementById("watchTrailer");
 let ytLinkName;
 
 $("#searchBtn").on("click", function (event) {
@@ -31,9 +32,9 @@ function displayMovieData(data) {
   $("#movieCard").append(
     `
     <div id="movieInfoCard" >
-      <img src="${Poster}" id="poster" onclick="youTubeTrailer()"  alt=${Title} - Movie Poster />
+      <img src="${Poster}" id="poster" onmouseenter="showTrailerMsg()" alt=${Title} - Movie Poster />
         <div class="movieData">
-          <h3 class="movieTitle data" onclick="youTubeTrailer()" style="text-align: center; margin-bottom: 20px;">${Title}</h3>
+          <h3 class="movieTitle data" style="text-align: center; margin-bottom: 20px;">${Title}</h3>
           <p class="movieGenre data">Genre: ${Genre}</p>
           <p class="movieActors data">Actors: ${Actors}</p>
           <p class="movieYear data">Year: ${Year}</p>
@@ -50,8 +51,13 @@ function displayMovieData(data) {
   );
 }
 
-function youTubeTrailer() {
-  console.log("watch trailer for: ", ytLinkName);
+function showTrailerMsg() {
+  watchTrailerMsg.style.visibility = "visible";
   let youTubeLink = `https://www.youtube.com/results?search_query=${ytLinkName}+trailer`;
-  console.log(youTubeLink);
+  watchTrailerMsg.setAttribute("href", youTubeLink);
+  watchTrailerMsg.setAttribute("target", "_blank");
+
+  setTimeout(() => {
+    watchTrailerMsg.style.visibility = "hidden";
+  }, 5000);
 }

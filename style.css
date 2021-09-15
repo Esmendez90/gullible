@@ -120,7 +120,7 @@ label {
 }
 
 #movieInfoCard {
-  padding: 12px;
+  padding: 20px;
   color: white;
   background-color: rgba(0, 0, 0, 0.4);
 }
@@ -130,7 +130,8 @@ label {
   clear: right;
   width: 30%;
   height: 35%;
-  margin: auto 20px 5px 20px;
+  margin: auto 20px auto 20px;
+  margin-bottom: 20px !important;
   box-shadow: rgb(204, 202, 202) 5px 3px 8px;
 }
 

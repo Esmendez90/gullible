@@ -52,7 +52,7 @@ function displayMovieData(data) {
 
 function showTrailerMsg() {
   watchTrailerMsg.style.visibility = "visible";
-  let youTubeLink = `https://www.youtube.com/results?search_query=${ytLinkName}+trailer`;
+  let youTubeLink = `http://www.youtube.com/results?search_query=${ytLinkName}+trailer`;
   watchTrailerMsg.setAttribute("href", youTubeLink);
   watchTrailerMsg.setAttribute("target", "_blank");
 

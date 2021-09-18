@@ -123,6 +123,7 @@ label {
   padding: 20px;
   color: white;
   background-color: rgba(0, 0, 0, 0.4);
+  overflow: auto;
 }
 
 #poster {
@@ -130,8 +131,7 @@ label {
   clear: right;
   width: 30%;
   height: 35%;
-  margin: auto 20px auto 20px;
-  margin-bottom: 20px !important;
+  margin: auto 20px;
   box-shadow: rgb(204, 202, 202) 5px 3px 8px;
 }
 
@@ -189,4 +189,8 @@ label {
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
+}
+
+.col-12 {
+  padding-right: 0px;
 }

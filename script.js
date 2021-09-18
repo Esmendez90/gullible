@@ -31,7 +31,7 @@ function displayMovieData(data) {
   $("#movieCard").append(
     `
     <div id="movieInfoCard" >
-    <h3 class="movieTitle data" onmouseenter="showTrailerMsg()">${Title}</h3>
+      <h3 class="movieTitle data" onmouseenter="showTrailerMsg()">${Title}</h3>
       <img src="${Poster}" id="poster" onmouseenter="showTrailerMsg()" alt=${Title} - Movie Poster />
         <div class="movieData">
           <p class="movieGenre data">Genre: ${Genre}</p>
@@ -43,7 +43,7 @@ function displayMovieData(data) {
           <p class="movieRuntime data">Runtime: ${Runtime}</p>
         </div>
         <div class="backBtnContainer">
-        <button id="backBtn" onclick="location.reload()">Back</button>
+          <button id="backBtn" onclick="location.reload()">Back</button>
         </div>
     </div>
     `

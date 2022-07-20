@@ -3,19 +3,20 @@ let innerDiv = document.querySelector(".inner");
 let watchTrailerMsg = document.getElementById("watchTrailer");
 let ytLinkName;
 
-$("#searchBtn").on("click", function (event) {
+$("#search-Btn").on("click", function (event) {
   event.preventDefault();
-  let title = $("#movie_title").val().trim();
-  apiCall(title);
+  // let title = $("#movie_title").val().trim();
+  apiCall();
+
 });
 
-function apiCall(title) {
+function apiCall() {
   axios
-    .get(`http://www.omdbapi.com/?t=${title}&apikey=b00e7121`)
+    .get(`http://www.omdbapi.com/?apikey=b00e7121&t=thor&type=movie&page=10`)
     .then((response) => {
-      //console.log(response.data);
-      let movieData = response.data;
-      displayMovieData(movieData);
+      console.log(response.data);
+      // let movieData = response.data;
+      // displayMovieData(movieData);
     })
     .catch((error) => console.error(error));
 }

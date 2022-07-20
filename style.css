@@ -1,196 +1,22 @@
 body {
-  margin: 0;
-  display: block;
-  background-color: pink;
-  background-image: linear-gradient(
-    to right,
-    rgb(177, 76, 93),
-    rgb(240, 103, 126),
-    rgb(177, 76, 93),
-    rgb(31, 168, 168),
-    rgb(37, 216, 216),
-    rgb(31, 168, 168)
-  );
-}
-.outer {
-  position: relative;
-  left: 15%;
-  transform: translate(0%, 35%);
-  width: 70%;
-  height: 550px;
-  background-color: pink;
-  background-image: linear-gradient(
-    to right,
-    rgb(177, 76, 93),
-    rgb(240, 103, 126),
-    rgb(177, 76, 93),
-    rgb(31, 168, 168),
-    rgb(37, 216, 216),
-    rgb(31, 168, 168)
-  );
-  box-shadow: rgb(209 209 213) 15px 15px 55px;
-}
-.inner {
-  position: absolute;
-  height: 55%;
-  width: 70%;
-  display: block;
-  top: 22.5%;
-  left: 15%;
-  background-color: pink;
-  background-image: linear-gradient(
-    to right,
-    rgb(177, 76, 93),
-    rgb(240, 103, 126),
-    rgb(177, 76, 93),
-    rgb(31, 168, 168),
-    rgb(37, 216, 216),
-    rgb(31, 168, 168)
-  );
-  box-shadow: rgb(209 209 213) 15px 15px 55px;
-}
-
-.search_form {
-  transform: translate(11%, 125px);
-}
-
-#movie_title {
-  width: 300px;
-  height: 45px;
-  border-width: 3px;
-  border-style: solid;
-  border-radius: 10px;
-  border-color: rgb(173, 126, 126);
-  box-shadow: rgb(209 209 213) 15px 15px 55px;
-  text-align: center;
-  font-family: "Rock Salt", cursive;
-}
-
-label {
-  font-size: 25px;
-  font-family: "Rock Salt", cursive;
-}
-
-#searchBtn,
-#backBtn {
-  width: 80px;
-  height: 50px;
-  border-width: 3px;
-  border-style: solid;
-  border-radius: 10px;
-  box-shadow: rgb(209 209 213) 15px 15px 55px;
-  transform: translate(10px, 9px);
-  overflow: hidden;
-}
-
-#searchBtn:hover {
-  box-shadow: #9b0808 10px 5px 20px;
-  border-color: rgb(173, 126, 126);
-}
-
-.cameraIcon:hover {
-  color: rgb(137, 195, 28) !important;
-}
-
-.logos {
-  position: relative;
-  top: 450px;
-  left: 42%;
-  width: fit-content;
-}
-
-.gLIcons {
-  font-size: 70px;
-  margin: 0 10px;
-  color: rgb(49, 26, 58);
-}
-
-.gLIcons:hover {
-  color: rgb(207, 70, 189);
-  box-shadow: #9b0808 10px 5px 20px;
-}
-
-#movieCard {
-  position: absolute;
-  left: 25%;
-  top: 30%;
-  display: none;
-  width: 50%;
-  height: fit-content;
-}
-
-#movieInfoCard {
-  padding: 20px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.4);
-  overflow: auto;
-}
-
-#poster {
-  float: left;
-  clear: right;
-  width: 30%;
-  height: 35%;
-  margin: auto 20px;
-  box-shadow: rgb(204, 202, 202) 5px 3px 8px;
-}
-
-.data {
-  text-shadow: black 2px 2px;
-}
-
-.backBtnContainer {
-  text-align: right;
-}
-
-#backBtn {
-  font-family: "Rock Salt", cursive;
-  color: rgb(207, 70, 189);
-  box-shadow: rgb(209 209 213) 5px 5px 10px;
-  transform: translate(0, 0);
-}
-
-#backBtn:hover {
-  box-shadow: #9b0808 10px 5px 20px;
-  border-color: rgb(173, 126, 126);
-  color: rgb(137, 195, 28);
-  text-shadow: black 1px 1px;
-}
-
-.movieTitle {
-  font-size: 60px;
-  background: -webkit-linear-gradient(rgb(66, 194, 206), rgb(178, 67, 182));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: center; 
-  margin-bottom: 20px;
-}
-
-.movieTitle:hover {
-  text-shadow: 0 0 2px rgb(37, 216, 216), 5px 5px 2px rgb(177, 76, 93);
-}
-
-#poster:hover,
-.movieTitle:hover {
-  cursor: pointer;
-}
-
-#watchTrailer {
-  position: absolute;
-  left: 7%;
-  top: 30%;
-  height: 30px;
-  width: 145px;
-  visibility: hidden;
   background-color: white;
-  font-weight: bolder;
-  color: green;
-  text-shadow: black 0.5px 0.5px;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
+  font-family: "Karla", "Helvetica Neue", helvetica, arial, sans-serif;
+  font-size: 1.125rem;
 }
 
-.col-12 {
-  padding-right: 0px;
+section {
+  margin: 5px 0;
+}
+
+form {
+  display: grid;
+}
+label{
+  font-weight: bolder;
+}
+input{
+  margin-bottom: 1rem;
+}
+button {
+  margin: 1rem;
 }

@@ -8,13 +8,6 @@
       http-equiv="Content-Security-Policy"
       content="upgrade-insecure-requests"
     />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
-      rel="stylesheet"
-    />
 
     <!-- Cloudflare -->
     <link
@@ -31,71 +24,82 @@
     />
 
     <!-- Custom stylesheet -->
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="/style.css" />
 
-    <title>d_o</title>
+    <title>Gullible</title>
   </head>
   <body>
-    <div class="row">
-      <div class="col-12">
-        <div class="outer">
-          <div class="inner">
-            <form class="search_form">
-              <label for="movie_title">Movie Title: </label>
-              <input
-                type="text"
-                id="movie_title"
-                placeholder="A QUIET PLACE"
-                required
-              />
-              <button id="searchBtn" type="sumbit">
-                <i
-                  class="fa fa-video-camera cameraIcon"
-                  style="font-size: 40px; color: rgb(207, 70, 189)"
-                ></i>
-              </button>
-            </form>
-          </div>
-
-          <div class="logos">
-            <a href="https://github.com/Esmendez90" target="_blank">
-              <i class="fa fa-github githubIcon gLIcons"></i>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/esteban-mendez-63515290/"
-              target="_blank"
-            >
-              <i class="fa fa-linkedin-square linkedinIcon gLIcons"></i>
-            </a>
-          </div>
+    <div class="header-main-container bg-dark">
+      <div id="background-image" class="header-container">
+        <div>
+          <h1
+            style="
+              color: white;
+              font-family: 'Arial Black';
+              margin: auto;
+              text-align: center;
+              padding: 4rem;
+            "
+          >
+            GULLIBLE
+          </h1>
         </div>
-
+      </div>
+    </div>
+    <div class="main-content">
+      <!-- Form container -->
+      <section
+        class="form-section-container"
+        style="
+          width: 100%;
+          height: 500px;
+          display: grid;
+          align-items: center;
+          justify-content: center;
+          background-color: aqua;
+        "
+      >
+        <div class="form-container">
+          <form>
+            <label for="title">Title </label>
+            <input type="text" id="title" placeholder="Forrest Gump" required />
+            <label for="type">Type </label>
+            <input type="text" id="type" placeholder="movie / series" />
+            <label for="year">Year </label>
+            <input type="text" id="year" placeholder="2022" />
+            <button id="search-Btn" type="submit">Search</button>
+          </form>
+        </div>
+      </section>
+      <!-- Movie card container -->
+      <section>
         <!-- Should display card with movie info -->
         <div id="movieCard">
           <!-- watch trailer message -->
           <a id="watchTrailer">Trailer List</a>
         </div>
-
-        <!-- JQuery -->
-        <script
-          src="https://code.jquery.com/jquery-3.6.0.min.js"
-          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-          crossorigin="anonymous"
-        ></script>
-
-        <!-- Axios Content Delivery Network (CDN)-->
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-        <!-- Bootstrap bundle -->
-        <script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-          crossorigin="anonymous"
-        ></script>
-
-        <!-- Custom script -->
-        <script src="./script.js"></script>
-      </div>
+      </section>
+     
     </div>
+
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Axios Content Delivery Network (CDN)-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Bootstrap bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Custom script -->
+    <script src="./script.js"></script>
   </body>
 </html>

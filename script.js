@@ -1,6 +1,7 @@
 let title;
 let type;
 let year;
+let storage= [];
 
 $("#search-Btn").on("click", function (event) {
   event.preventDefault();
@@ -20,7 +21,11 @@ function getData(title, type, year) {
       console.log(response.data);
       
       document.getElementById("myForm").reset();
-      response.data.Response === "False" ? alert("Error! Please, try again.") : 
+      response.data.Response === "False" ? alert("Error! Please, try again.") :
+
+      storage.push(response.data);
+      localStorage.setItem("saved-movies-series", JSON.stringify(storage));
+      console.log(storage);
       displayData(response.data);
     })
     .catch((error) => {
@@ -49,15 +54,37 @@ function displayData(data) {
     </div>
     `
   );
+};
+
+function renderStorage() {
+  // $("#saved-cities").empty();
+
+  storage = JSON.parse(localStorage.getItem("saved-movies-series"));
+console.log(storage);
+  // for (var i = 0; i < storage.length; i++) {
+  //   //console.log(storage[i]);
+
+  //   var liTag = $("<li>");
+  //   liTag.addClass("list-group-item saved-city");
+  //   liTag.attr("id", i);
+  //   ulTag.append(liTag);
+  //   $("#" + i).text(storage[i]);
+  // }
 }
 
-function showTrailerMsg() {
-  watchTrailerMsg.style.visibility = "visible";
-  let youTubeLink = `http://www.youtube.com/results?search_query=${ytLinkName}+trailer`;
-  watchTrailerMsg.setAttribute("href", youTubeLink);
-  watchTrailerMsg.setAttribute("target", "_blank");
+renderStorage();
 
-  setTimeout(() => {
-    watchTrailerMsg.style.visibility = "hidden";
-  }, 5000);
+if (localStorage.getItem("saved-movies-series") === null) {
+  localStorage.setItem("saved-movies-series", JSON.stringify([]));
 }
+
+// function showTrailerMsg() {
+//   watchTrailerMsg.style.visibility = "visible";
+//   let youTubeLink = `http://www.youtube.com/results?search_query=${ytLinkName}+trailer`;
+//   watchTrailerMsg.setAttribute("href", youTubeLink);
+//   watchTrailerMsg.setAttribute("target", "_blank");
+
+//   setTimeout(() => {
+//     watchTrailerMsg.style.visibility = "hidden";
+//   }, 5000);
+// }

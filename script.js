@@ -1,7 +1,7 @@
 let title;
 let type;
 let year;
-let storage= [];
+let storage = [];
 
 $("#search-Btn").on("click", function (event) {
   event.preventDefault();
@@ -19,14 +19,16 @@ function getData(title, type, year) {
     )
     .then((response) => {
       console.log(response.data);
-      
-      document.getElementById("myForm").reset();
-      response.data.Response === "False" ? alert("Error! Please, try again.") :
 
-      storage.push(response.data);
-      localStorage.setItem("saved-movies-series", JSON.stringify(storage));
-      console.log(storage);
-      displayData(response.data);
+      if (response.data.Response === "False") {
+        alert("Error! Please, try again.");
+      } else {
+        storage.push(response.data);
+        localStorage.setItem("saved-movies-series", JSON.stringify(storage));
+        console.log(storage);
+        document.getElementById("myForm").reset();
+        displayData(response.data);
+      }
     })
     .catch((error) => {
       console.error(error);
@@ -54,13 +56,32 @@ function displayData(data) {
     </div>
     `
   );
-};
+}
 
 function renderStorage() {
   // $("#saved-cities").empty();
 
   storage = JSON.parse(localStorage.getItem("saved-movies-series"));
-console.log(storage);
+  console.log(storage);
+  storage.forEach((movie) =>
+    $("#storage-container").append(`
+<div id="movieCard" >
+<img src="${movie.Poster}" alt=${movie.Title}/>
+  <div class="movie-card-body">
+    <h1>${movie.Title}</h1>
+    <p><b>Genre:</b> ${movie.Genre}</p>
+    <p><b>Actors:</b> ${movie.Actors}</p>
+    <p><b>Year:</b> ${movie.Year}</p>
+    <p><b>Rated:</b> ${movie.Rated}</p>
+    <p><b>Plot:</b> ${movie.Plot}</p>
+    <p><b>Director:</b> ${movie.Director}</p>
+    <p><b>Runtime:</b> ${movie.Runtime}</p>
+  </div>
+</div>
+
+`)
+  );
+
   // for (var i = 0; i < storage.length; i++) {
   //   //console.log(storage[i]);
 
@@ -72,11 +93,11 @@ console.log(storage);
   // }
 }
 
-renderStorage();
 
 if (localStorage.getItem("saved-movies-series") === null) {
   localStorage.setItem("saved-movies-series", JSON.stringify([]));
 }
+renderStorage();
 
 // function showTrailerMsg() {
 //   watchTrailerMsg.style.visibility = "visible";

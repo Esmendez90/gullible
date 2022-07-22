@@ -21,7 +21,7 @@ video {
   background-color: #5700ff;
   background-image: linear-gradient(
     to bottom left,
-    #f406736e 20%,
+    #a406f496 20%,
     #5704f7 71%,
     #5700ff 100%
   );
@@ -37,7 +37,7 @@ label {
 input {
   margin-bottom: 1rem;
   height: 45px;
-  border:none;
+  border: none;
   border-radius: 30px;
 }
 .btn-container {
@@ -54,17 +54,23 @@ button {
   font-weight: bold;
   letter-spacing: 0.9px;
 }
-.scroll-arrow-container{
-  text-align: center;
-  margin-top: 2rem;
+.scroll-arrow-container {
+  text-align: center !important;
+  margin-top: 2rem !important;
 }
 .scroll-arrow-container polyline {
-	animation: mymove 2s infinite;
+  animation: mymove 2s infinite !important;
 }
 @keyframes mymove {
-  0%   {stroke:grey;}
-  50%  {stroke: white;}
-  100%  {stroke:grey;}
+  0% {
+    stroke: grey;
+  }
+  50% {
+    stroke: white;
+  }
+  100% {
+    stroke: grey;
+  }
 }
 
 #movieCard img {

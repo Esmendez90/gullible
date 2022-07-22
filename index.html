@@ -29,23 +29,35 @@
     <title>Gullible</title>
   </head>
   <body>
-    <div class="header-main-container bg-dark">
+    <div class="header-main-container">
       <div id="background-image" class="header-container">
-        <div>
-          <h1
-            style="
-              color: white;
-              font-family: 'Arial Black';
-              margin: auto;
-              text-align: center;
-              padding: 4rem;
-            "
-          >
-            GULLIBLE
-          </h1>
-        </div>
+        <video autoplay loop playsinline muted>
+          <source src="./assets/video.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div
+        style="
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          display: grid;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <h1
+          style="
+            color: white;
+            font-family: 'Arial Black';
+            text-align: center;
+          "
+        >
+          GULLIBLE
+        </h1>
       </div>
     </div>
+
     <div class="main-content">
       <!-- Form container -->
       <section
@@ -56,30 +68,28 @@
           display: grid;
           align-items: center;
           justify-content: center;
-          background-color: aqua;
+          background-color: #5700ff;
         "
       >
+      <div class="sheep
         <div class="form-container">
-          <form>
+          <form id="myForm">
             <label for="title">Title </label>
             <input type="text" id="title" placeholder="Forrest Gump" required />
             <label for="type">Type </label>
-            <input type="text" id="type" placeholder="movie / series" />
+            <input type="text" id="type" placeholder="movie | series" />
             <label for="year">Year </label>
             <input type="text" id="year" placeholder="2022" />
+            <div class="btn-container">
             <button id="search-Btn" type="submit">Search</button>
+            </div>
           </form>
         </div>
       </section>
       <!-- Movie card container -->
       <section>
-        <!-- Should display card with movie info -->
-        <div id="movieCard">
-          <!-- watch trailer message -->
-          <a id="watchTrailer">Trailer List</a>
-        </div>
+        <div id="movieCard-container"></div>
       </section>
-     
     </div>
 
     <!-- JQuery -->

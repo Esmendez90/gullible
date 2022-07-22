@@ -30,7 +30,7 @@
   </head>
   <body>
     <div class="header-main-container">
-      <div id="background-image" class="header-container">
+      <div class="header-container">
         <video autoplay loop playsinline muted>
           <source src="./assets/video.mp4" type="video/mp4" />
         </video>
@@ -46,7 +46,7 @@
           justify-content: center;
         "
       >
-        <h1
+        <div><h1
           style="
             color: white;
             font-family: 'Arial Black';
@@ -55,7 +55,9 @@
         >
           GULLIBLE
         </h1>
+        <p style="margin-bottom:0; color:white; text-align:center;">Get your favorite movie or series information</p>
       </div>
+    </div>
     </div>
 
     <div class="main-content">
@@ -69,16 +71,21 @@
         <div class="form-container">
           <form id="myForm">
             <label for="title">Title </label>
-            <input type="text" id="title" placeholder="Forrest Gump" required />
+            <input type="text" id="title" placeholder=" Forrest Gump" required />
             <label for="type">Type </label>
-            <input type="text" id="type" placeholder="movie | series" />
+            <input type="text" id="type" placeholder=" Movie | Series" />
             <label for="year">Year </label>
-            <input type="text" id="year" placeholder="2022" />
+            <input type="text" id="year" placeholder=" 2022" />
             <div class="btn-container">
             <button id="search-Btn" type="submit">Search</button>
             </div>
           </form>
         </div>
+        <div class="scroll-arrow-container">
+          <a href="#content">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" stroke-width="2"><g stroke-width="2" transform="translate(0, 0)"><polyline class="arrow-path" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="44,26 32,38 20,26" stroke-linejoin="miter"></polyline></g></svg>
+          </a>
+          </div>
       </section>
       <!-- Movie card container -->
       <section>

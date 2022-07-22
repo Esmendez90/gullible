@@ -18,10 +18,14 @@ function getData(title, type, year) {
     )
     .then((response) => {
       console.log(response.data);
+      
       document.getElementById("myForm").reset();
+      response.data.Response === "False" ? alert("Error! Please, try again.") : 
       displayData(response.data);
     })
-    .catch((error) => console.error(error));
+    .catch((error) => {
+      console.error(error);
+    });
 }
 
 function displayData(data) {
@@ -33,14 +37,14 @@ function displayData(data) {
     <div id="movieCard" >
       <img src="${Poster}" alt=${Title}/>
         <div class="movie-card-body">
-          <h2>${Title}</h2>
-          <p>Genre: ${Genre}</p>
-          <p>Actors: ${Actors}</p>
-          <p>Year: ${Year}</p>
-          <p>Rated: ${Rated}</p>
-          <p>Plot: ${Plot}</p>
-          <p>Director: ${Director}</p>
-          <p>Runtime: ${Runtime}</p>
+          <h1>${Title}</h1>
+          <p><b>Genre:</b> ${Genre}</p>
+          <p><b>Actors:</b> ${Actors}</p>
+          <p><b>Year:</b> ${Year}</p>
+          <p><b>Rated:</b> ${Rated}</p>
+          <p><b>Plot:</b> ${Plot}</p>
+          <p><b>Director:</b> ${Director}</p>
+          <p><b>Runtime:</b> ${Runtime}</p>
         </div>
     </div>
     `

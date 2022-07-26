@@ -73,7 +73,9 @@ button {
     stroke: grey;
   }
 }
-
+h3{
+  color: #374458; font-weight: bold; margin: 2rem;
+}
 #movieCard img {
   width: 100%;
 }
@@ -85,4 +87,24 @@ button {
 }
 .movie-card-body h1 {
   color: #5700ff;
+}
+
+.storage-section-container{
+  overflow-x: auto;
+  margin-top: 1rem;
+  background-color: #9bccfe21
+
+}
+#storage-container {
+  display: inline-flex;
+}
+.storage-section-container #storage-container div:not(:last-child){
+  margin-right: 2px;
+}
+.storage-section-container img {
+  height: 37%;
+}
+.storage-section-container .movie-card-body {
+  height: 65%;
+  width: 300px;
 }

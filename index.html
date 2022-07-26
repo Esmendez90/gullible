@@ -46,55 +46,88 @@
           justify-content: center;
         "
       >
-        <div><h1
-          style="
-            color: white;
-            font-family: 'Arial Black';
-            text-align: center;
-          "
-        >
-          GULLIBLE
-        </h1>
-        <p style="margin-bottom:0; color:white; text-align:center;">Get your favorite movie or series information</p>
+        <div>
+          <h1
+            style="color: white; font-family: 'Arial Black'; text-align: center"
+          >
+            GULLIBLE
+          </h1>
+          <p style="margin-bottom: 0; color: white; text-align: center">
+            Get your favorite movie or series information
+          </p>
+        </div>
       </div>
-    </div>
     </div>
 
     <div class="main-content">
       <!-- Form container -->
-      <section
-        class="form-section-container"
-      >
-      <div class="wolf-icon-container" style="text-align:center;margin-bottom:2rem;">
-        <img src="./assets/sheepwolf.png" alt="sheep wolf icon" class="d-block w-100"/>
-      </div>
+      <section class="form-section-container">
+        <div
+          class="wolf-icon-container"
+          style="text-align: center; margin-bottom: 2rem"
+        >
+          <img
+            src="./assets/sheepwolf.png"
+            alt="sheep wolf icon"
+            class="d-block w-100"
+          />
+        </div>
         <div class="form-container">
           <form id="myForm">
             <label for="title">Title </label>
-            <input type="text" id="title" placeholder=" Forrest Gump" required />
+            <input
+              type="text"
+              id="title"
+              placeholder=" Forrest Gump"
+              required
+            />
             <label for="type">Type </label>
             <input type="text" id="type" placeholder=" Movie | Series" />
             <label for="year">Year </label>
             <input type="text" id="year" placeholder=" 2022" />
             <div class="btn-container">
-            <button id="search-Btn" type="submit">Search</button>
+              <button id="search-Btn" type="submit">Search</button>
             </div>
           </form>
         </div>
         <div class="scroll-arrow-container">
           <a href="#movieCard">
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" stroke-width="2"><g stroke-width="2" transform="translate(0, 0)"><polyline class="arrow-path" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="44,26 32,38 20,26" stroke-linejoin="miter"></polyline></g></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              width="64px"
+              height="64px"
+              viewBox="0 0 64 64"
+              stroke-width="2"
+            >
+              <g stroke-width="2" transform="translate(0, 0)">
+                <polyline
+                  class="arrow-path"
+                  fill="none"
+                  stroke="#FFFFFF"
+                  stroke-width="2"
+                  stroke-linecap="square"
+                  stroke-miterlimit="10"
+                  points="44,26 32,38 20,26"
+                  stroke-linejoin="miter"
+                ></polyline>
+              </g>
+            </svg>
           </a>
-          </div>
+        </div>
       </section>
+      <h3>SEARCH RESULTS</h3>
       <!-- Movie card container -->
       <section>
         <div id="movieCard-container"></div>
       </section>
-        <!-- Local storage container -->
-        <section>
-          <div id="storage-container"></div>
-        </section>
+      <!-- Local storage container -->
+      <section class="storage-section-container">
+        <h3>PREVIOUS SEARCHES</h3>
+        <div id="storage-container"></div>
+      </section>
     </div>
 
     <!-- JQuery -->

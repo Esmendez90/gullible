@@ -59,7 +59,7 @@ function displayData(data) {
     `
     
   );
-  saveFarovite(data);
+  saveToFavorites(data);
 }
 
 function renderStorage() {
@@ -87,7 +87,8 @@ function renderFavorites() {
   favorites = JSON.parse(localStorage.getItem("favorite-movies-series"));
   for (var i = 0; i < favorites.length; i++) {
     $("#favorites-container").append(`
-    <div id="movieCard">
+    <div id="movieCard" index=${i}>
+    <button id="delete-btn" index=${i}>Remove</button>
         <img src="${favorites[i].Poster}" alt=${favorites[i].Title}/>
         <div class="movie-card-body">
        <h1>${favorites[i].Title}</h1>
@@ -105,7 +106,7 @@ function renderFavorites() {
 };
 
 
-function saveFarovite(data){
+function saveToFavorites(data){
 $("#star-btn").on("click", function (event) {
   event.preventDefault();
   favorites.unshift(data);
@@ -113,7 +114,14 @@ $("#star-btn").on("click", function (event) {
   console.log(favorites);
   renderFavorites();
 });
-}
+};
+
+function deleteItem(){
+$("#delete-btn").on("click", function (event) {
+  event.preventDefault();
+  console.log(event.target.getAttribute("index"));
+});
+};
 
 
 if (localStorage.getItem("saved-movies-series") === null) {
@@ -124,3 +132,4 @@ if (localStorage.getItem("favorite-movies-series") === null) {
 }
 renderStorage();
 renderFavorites();
+deleteItem();

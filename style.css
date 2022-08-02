@@ -119,6 +119,7 @@ i {
 #storage-container {
   display: inline-flex;
   overflow-x: auto;
+  overflow-y: hidden;
 }
 .storage-section-container #storage-container div:not(:last-child){
   margin-right: 2px;
@@ -131,7 +132,7 @@ i {
   width: 300px;
 }
 #empty-storage-btn {
-  width: 180px;
+  width: 150px;
   margin-left: 2rem;
   margin-bottom: 1rem;
 }

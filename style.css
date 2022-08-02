@@ -111,7 +111,6 @@ i {
   background-color: #9bccfe21;
 }
 .storage-section-container{
-  overflow-x: auto;
   margin-top: 1rem;
   background-color: #9bfed721;
   display: grid;
@@ -119,6 +118,7 @@ i {
 
 #storage-container {
   display: inline-flex;
+  overflow-x: auto;
 }
 .storage-section-container #storage-container div:not(:last-child){
   margin-right: 2px;

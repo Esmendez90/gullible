@@ -10,6 +10,9 @@ $("#search-Btn").on("click", function (event) {
   year = $("#year").val().trim().toLowerCase();
 
   getData(title, type, year);
+  document.querySelector('.results-section-container').scrollIntoView({
+    behavior: 'smooth', block: 'nearest', inline: "nearest"
+});
   document.getElementById("myForm").reset();
   $("#movieCard").remove();
 });

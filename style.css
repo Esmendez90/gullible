@@ -4,6 +4,9 @@ body {
   font-size: 1.125rem;
   letter-spacing: 0.9px;
 }
+html {
+  scroll-behavior: smooth;
+}
 .header-main-container {
   position: relative;
 }
@@ -107,24 +110,24 @@ i {
   display: grid;
   background-color: #9bccfe21;
 }
-.storage-section-container, .favorite-section-container{
+.storage-section-container{
   overflow-x: auto;
   margin-top: 1rem;
   background-color: #9bfed721;
   display: grid;
 }
 
-#storage-container, #favorites-container {
+#storage-container {
   display: inline-flex;
 }
-.storage-section-container #storage-container div:not(:last-child), .favorite-section-container #favorites-container div:not(:last-child){
+.storage-section-container #storage-container div:not(:last-child){
   margin-right: 2px;
 }
-.storage-section-container img, .favorite-section-container img {
-  height: 37%;
+.storage-section-container img {
+  height: 24%;
 }
-.storage-section-container .movie-card-body, .favorite-section-container .movie-card-body {
-  height: 65%;
+.storage-section-container .movie-card-body {
+  height: 80%;
   width: 300px;
 }
 #empty-storage-btn {

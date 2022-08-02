@@ -6,10 +6,10 @@ let storage = [];
 $("#search-Btn").on("click", function (event) {
   event.preventDefault();
   title = $("#title").val().trim().toLowerCase();
-  type = $("#type").val().trim().toLowerCase();
+  // type = $("#type").val().trim().toLowerCase();
   year = $("#year").val().trim().toLowerCase();
 
-  getData(title, type, year);
+  getData(title, year);
   document.querySelector('.results-section-container').scrollIntoView({
     behavior: 'smooth', block: 'nearest', inline: "nearest"
 });
@@ -17,10 +17,10 @@ $("#search-Btn").on("click", function (event) {
   $("#movieCard").remove();
 });
 
-function getData(title, type, year) {
+function getData(title,year) {
   axios
     .get(
-      `http://www.omdbapi.com/?apikey=b00e7121&t=${title}&type=${type}&y=${year}&plot=full`
+      `http://www.omdbapi.com/?apikey=b00e7121&t=${title}&y=${year}&plot=full`
     )
     .then((response) => {
       if (response.data.Response === "False") {

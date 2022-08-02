@@ -17,7 +17,7 @@ $("#search-Btn").on("click", function (event) {
 function getData(title, type, year) {
   axios
     .get(
-      `http://www.omdbapi.com/?apikey=b00e7121&t=${title}&type=${type}&y=${year}`
+      `http://www.omdbapi.com/?apikey=b00e7121&t=${title}&type=${type}&y=${year}&plot=full`
     )
     .then((response) => {
       if (response.data.Response === "False") {

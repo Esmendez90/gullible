@@ -105,15 +105,13 @@ i {
 }
 .results-section-container{
   display: grid;
+  background-color: #9bccfe21;
 }
 .storage-section-container, .favorite-section-container{
   overflow-x: auto;
   margin-top: 1rem;
-  background-color: #9bccfe21;
-  display: grid;
-}
-.favorite-section-container {
   background-color: #9bfed721;
+  display: grid;
 }
 
 #storage-container, #favorites-container {
@@ -128,4 +126,9 @@ i {
 .storage-section-container .movie-card-body, .favorite-section-container .movie-card-body {
   height: 65%;
   width: 300px;
+}
+#empty-storage-btn {
+  width: 180px;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
 }

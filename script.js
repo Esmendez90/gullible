@@ -2,7 +2,6 @@ let title;
 let type;
 let year;
 let storage = [];
-let favorites = [];
 
 $("#search-Btn").on("click", function (event) {
   event.preventDefault();
@@ -11,8 +10,8 @@ $("#search-Btn").on("click", function (event) {
   year = $("#year").val().trim().toLowerCase();
 
   getData(title, type, year);
-
   document.getElementById("myForm").reset();
+  $("#movieCard").remove();
 });
 
 function getData(title, type, year) {
@@ -22,12 +21,11 @@ function getData(title, type, year) {
     )
     .then((response) => {
       if (response.data.Response === "False") {
-        alert("Error! Please, try again.");
+        alert("Error! Please, try again. Check your spelling.");
       } else {
-        // createStorage(response.data);
+        renderCard(response.data);
         storage.unshift(response.data);
         localStorage.setItem("saved-movies-series", JSON.stringify(storage));
-        displayData(response.data);
       }
     })
     .catch((error) => {
@@ -35,32 +33,29 @@ function getData(title, type, year) {
     });
 }
 
-function displayData(data) {
-  $("#movieCard").remove();
-  const { Title, Year, Genre, Actors, Rated, Plot, Director, Runtime, Poster } =
-    data;
-
-  $("#movieCard-container").append(
-    `
-    <div id="movieCard" >
-    <div id="star-btn"><i class="fa-solid fa-star"></i></div>
-      <img src="${Poster}" alt=${Title}/>
-        <div class="movie-card-body">
-          <h1>${Title}</h1>
-          <p><b>Genre:</b> ${Genre}</p>
-          <p><b>Actors:</b> ${Actors}</p>
-          <p><b>Year:</b> ${Year}</p>
-          <p><b>Rated:</b> ${Rated}</p>
-          <p><b>Plot:</b> ${Plot}</p>
-          <p><b>Director:</b> ${Director}</p>
-          <p><b>Runtime:</b> ${Runtime}</p>
-        </div>
+function renderCard(data) {
+  $("#movieCard-container").append(`
+    <div id="movieCard">
+         <img src="${data.Poster}" alt=${data.Title}/>
+      <div class="movie-card-body">
+        <h1>${data.Title}</h1>
+        <p><b>Genre:</b> ${data.Genre}</p>
+        <p><b>Actors:</b> ${data.Actors}</p>
+        <p><b>Year:</b> ${data.Year}</p>
+        <p><b>Rated:</b> ${data.Rated}</p>
+        <p><b>Plot:</b> ${data.Plot}</p>
+        <p><b>Director:</b> ${data.Director}</p>
+        <p><b>Runtime:</b> ${data.Runtime}</p>
     </div>
-    `
-    
-  );
-  saveToFavorites(data);
-}
+  </div>
+ `);
+};
+
+function createStorage (data) {
+  storage.push(data);
+  localStorage.setItem("saved-movies-series", JSON.stringify(storage));
+  renderStorage();
+};
 
 function renderStorage() {
   storage = JSON.parse(localStorage.getItem("saved-movies-series"));
@@ -83,53 +78,15 @@ function renderStorage() {
   };
 };
 
-function renderFavorites() {
-  favorites = JSON.parse(localStorage.getItem("favorite-movies-series"));
-  for (var i = 0; i < favorites.length; i++) {
-    $("#favorites-container").append(`
-    <div id="movieCard" index=${i}>
-    <button id="delete-btn" index=${i}>Remove</button>
-        <img src="${favorites[i].Poster}" alt=${favorites[i].Title}/>
-        <div class="movie-card-body">
-       <h1>${favorites[i].Title}</h1>
-       <p><b>Genre:</b> ${favorites[i].Genre}</p>
-       <p><b>Actors:</b> ${favorites[i].Actors}</p>
-       <p><b>Year:</b> ${favorites[i].Year}</p>
-       <p><b>Rated:</b> ${favorites[i].Rated}</p>
-       <p><b>Plot:</b> ${favorites[i].Plot}</p>
-       <p><b>Director:</b> ${favorites[i].Director}</p>
-       <p><b>Runtime:</b> ${favorites[i].Runtime}</p>
-   </div>
- </div>
- `);
-  };
-};
-
-
-function saveToFavorites(data){
-$("#star-btn").on("click", function (event) {
-  event.preventDefault();
-  favorites.unshift(data);
-  localStorage.setItem("favorite-movies-series", JSON.stringify(favorites));
-  console.log(favorites);
-  renderFavorites();
-});
-};
-
-function deleteItem(){
-$("#delete-btn").on("click", function (event) {
-  event.preventDefault();
-  console.log(event.target.getAttribute("index"));
-});
-};
-
-
 if (localStorage.getItem("saved-movies-series") === null) {
   localStorage.setItem("saved-movies-series", JSON.stringify(storage));
-}
-if (localStorage.getItem("favorite-movies-series") === null) {
-  localStorage.setItem("favorite-movies-series", JSON.stringify(favorites));
-}
+};
+
+$("#empty-storage-btn").on('click', (event) => {
+  event.preventDefault();
+  console.log("clear");
+  localStorage.setItem("saved-movies-series", JSON.stringify([]));
+  location.reload();
+});
+
 renderStorage();
-renderFavorites();
-deleteItem();

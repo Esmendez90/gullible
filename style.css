@@ -18,7 +18,7 @@ video {
   height: auto;
   padding: 4rem;
   padding-top: 2rem;
-  margin-bottom: 7px;
+  margin-bottom: 2rem;
   display: grid;
   align-items: center;
   justify-content: center;
@@ -82,8 +82,14 @@ button, #delete-btn {
     stroke: grey;
   }
 }
+.h3-container {
+  text-align: center;
+  margin: 2rem;
+  padding: 4rem;
+}
 h3{
-  color: #374458; font-weight: bold; margin: 2rem;
+  color: #374458; 
+  font-weight: bold;
 }
 #movieCard {
   position: relative;
@@ -111,7 +117,7 @@ i {
   background-color: #9bccfe21;
 }
 .storage-section-container{
-  margin-top: 1rem;
+  margin: 2rem auto;
   background-color: #9bfed721;
   display: grid;
 }
@@ -131,10 +137,10 @@ i {
   height: 100%;
   width: 300px;
 }
+
 #empty-storage-btn {
-  width: 150px;
-  margin-left: 2rem;
-  margin-bottom: 1rem;
+  width: 100px;
+  margin-top: 1rem;
 }
 
 @media only screen and (min-width: 768px) {

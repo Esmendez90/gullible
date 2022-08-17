@@ -10,6 +10,9 @@ html {
 .header-main-container {
   position: relative;
 }
+h1{
+  font-size: 2rem;
+}
 video {
   width: 100%;
 }
@@ -149,6 +152,9 @@ i {
   .wolf-icon-container img {
     width: 50% !important;
     margin: auto;
+  }
+  h1{
+    font-size: 4rem;
   }
   form {
     padding-left: 4rem;

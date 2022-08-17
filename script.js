@@ -1,21 +1,7 @@
 let title;
 let type;
 let year;
-let storage = [];
-
-$("#search-Btn").on("click", function (event) {
-  event.preventDefault();
-  title = $("#title").val().trim().toLowerCase();
-  // type = $("#type").val().trim().toLowerCase();
-  year = $("#year").val().trim().toLowerCase();
-
-  getData(title, year);
-  document.querySelector('.results-section-container').scrollIntoView({
-    behavior: 'smooth', block: 'nearest', inline: "nearest"
-});
-  document.getElementById("myForm").reset();
-  $("#movieCard").remove();
-});
+// let storage = [];
 
 function getData(title,year) {
   axios
@@ -26,9 +12,14 @@ function getData(title,year) {
       if (response.data.Response === "False") {
         alert("Error! Please, try again. Check your spelling.");
       } else {
-        renderCard(response.data);
-        storage.unshift(response.data);
+        // renderCard(response.data);
+        // storage.unshift(response.data);
+        // localStorage.setItem("saved-movies-series", JSON.stringify(storage));
+        let storage = JSON.parse(localStorage.getItem("saved-movies-series"));
+        storage.push(response.data);
         localStorage.setItem("saved-movies-series", JSON.stringify(storage));
+          renderCard(response.data);
+          renderStorage();
       }
     })
     .catch((error) => {
@@ -54,14 +45,15 @@ function renderCard(data) {
  `);
 };
 
-function createStorage (data) {
-  storage.push(data);
-  localStorage.setItem("saved-movies-series", JSON.stringify(storage));
-  renderStorage();
-};
+// function createStorage (data) {
+//   storage.push(data);
+//   localStorage.setItem("saved-movies-series", JSON.stringify(storage));
+//   renderStorage();
+// };
 
 function renderStorage() {
-  storage = JSON.parse(localStorage.getItem("saved-movies-series"));
+  $("#storage-container").empty();
+  let storage = JSON.parse(localStorage.getItem("saved-movies-series"));
   for (var i = 0; i < storage.length; i++) {
     $("#storage-container").append(`
     <div id="movieCard">
@@ -81,8 +73,21 @@ function renderStorage() {
   };
 };
 
+$("#search-Btn").on("click", function (event) {
+  event.preventDefault();
+  title = $("#title").val().trim().toLowerCase();
+  year = $("#year").val().trim().toLowerCase();
+
+  getData(title, year);
+  document.querySelector('#movieCard').scrollIntoView({
+    behavior: 'smooth', block: 'start', inline:'start'
+});
+  document.getElementById("myForm").reset();
+  $("#movieCard").remove();
+});
+
 if (localStorage.getItem("saved-movies-series") === null) {
-  localStorage.setItem("saved-movies-series", JSON.stringify(storage));
+  localStorage.setItem("saved-movies-series", JSON.stringify([]));
 };
 
 $("#empty-storage-btn").on('click', (event) => {

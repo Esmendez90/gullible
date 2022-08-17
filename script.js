@@ -1,6 +1,7 @@
 let title;
 let type;
 let year;
+let acc = []
 
 function getData(title, year) {
   axios
@@ -44,14 +45,15 @@ function renderCard(data) {
 function renderStorage() {
   $("#storage-container").empty();
   let storage = JSON.parse(localStorage.getItem("saved-movies-series"));
-  for (var i = 0; i < storage.length; i++) {
+  for (let i = 0; i < storage.length; i++) {
     $("#storage-container").append(`
     <div id="movieCard">
-        <div class="img-expbtn-container">
+  
+       
         <img src="${storage[i].Poster}" alt=${storage[i].Title}/>
-        <button class="expand-btn">Expand</button>
-        </div>
-        <div class="movie-card-body">
+        
+       <button class="accordion">Expand</button>
+        <div class="movie-card-body panel" >
            <h1>${storage[i].Title}</h1>
           <p><b>Genre:</b> ${storage[i].Genre}</p>
           <p><b>Actors:</b> ${storage[i].Actors}</p>
@@ -63,6 +65,9 @@ function renderStorage() {
         </div>
     </div>
  `);
+  acc = document.getElementsByClassName("accordion");
+  createBtn();
+ console.log(acc);
   }
 }
 
@@ -92,4 +97,27 @@ $("#empty-storage-btn").on("click", (event) => {
   location.reload();
 });
 
+// let acc = document.getElementsByClassName("accordion");
+
+// console.log(acc);
+function createBtn () {
+if (acc.length > 1 ){
+  console.log(acc);
+for (let i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+    let panel = this.nextElementSibling;
+    console.log(panel);
+    if (panel.style.height === 0) {
+      panel.style.height = 100 + "%";
+    } else {
+      panel.style.height = 0;
+    }
+  });
+}
+} else {
+  acc = [];
+}
+
+}
 renderStorage();

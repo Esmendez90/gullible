@@ -9,12 +9,6 @@
       content="upgrade-insecure-requests"
     />
 
-    <!-- Cloudflare -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-    />
-
     <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -59,12 +53,12 @@
     <div class="main-content">
       <!-- Form container -->
       <section class="form-section-container">
-        <p style="color: white; text-align: center; font-weight: 600;">
+        <p style="color: white; text-align: center; font-weight: 600">
           Get your favorite movie or series information
         </p>
         <div
           class="wolf-icon-container"
-          style="text-align: center; margin:2rem auto;"
+          style="text-align: center; margin: 2rem auto"
         >
           <img
             src="./assets/sheepwolf.png"
@@ -75,13 +69,7 @@
         <div class="form-container">
           <form id="myForm">
             <label for="title">Title </label>
-            <input
-              type="text"
-              id="title"
-              required
-            />
-            <!-- <label for="type">Type </label>
-            <input type="text" id="type" placeholder=" Movie | Series" /> -->
+            <input type="text" id="title" required />
             <label for="year">Year </label>
             <input type="text" id="year" />
             <div class="btn-container">
@@ -118,24 +106,56 @@
         </div>
       </section>
 
-     
       <!-- Movie card container -->
       <section class="results-section-container">
         <div class="h3-container">
-        <h3>SEARCH RESULTS</h3>
-      </div>
+          <h3>SEARCH RESULTS</h3>
+        </div>
         <div id="movieCard-container"></div>
       </section>
-     
+
       <!-- Local storage container -->
       <section class="storage-section-container">
         <div class="h3-container">
           <h3>RECENTLY VIEWED</h3>
-        <button id="empty-storage-btn">Empty</button>
-      </div>
+          <button id="empty-storage-btn">Empty</button>
+        </div>
         <div id="storage-container"></div>
       </section>
     </div>
+
+    <!-- Footer -->
+    <section>
+      <div
+        class="row"
+        style="
+          padding: 2rem;
+          justify-content: center;
+          align-items: center;
+          background-color: #5700ff;
+          background-image: linear-gradient(
+            to bottom right,
+            #a406f496 20%,
+            #5704f7 71%,
+            #5700ff 100%
+          );
+          color: white;
+        "
+      >
+        <div class="logo-container" style="width: 50%">
+          <img
+            class="logo"
+            src="./assets/logo.png"
+            alt="logo"
+            style="width: 60%"
+          />
+        </div>
+        <div class="text-footer-container" style="width: 50%">
+          <h5>Created by:</h5>
+          <p style="margin-bottom: 0">Esteban Mendez</p>
+        </div>
+      </div>
+    </section>
 
     <!-- JQuery -->
     <script

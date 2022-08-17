@@ -96,15 +96,29 @@ h3{
 }
 #movieCard {
   position: relative;
+  width: 100%;
 }
-i {
+/* i {
   position: absolute;
   top: 2%;
   right: 5%;
   color: #f9be29;
-}
+} */
 #movieCard img {
   width: 100%;
+}
+.img-expbtn-container{
+  position: relative;
+}
+
+.expand-btn{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: fit-content;
+  font-size: 10px;
+  height: 30px;
+
 }
 .movie-card-body {
   padding: 4rem;
@@ -137,10 +151,11 @@ i {
 }
 .storage-section-container img {
   height: auto;
+width: auto !important;
 }
 .storage-section-container .movie-card-body {
   height: 100%;
-  width: 300px;
+  width: auto;
 }
 
 #empty-storage-btn {

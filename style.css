@@ -112,14 +112,14 @@ h3 {
   position: relative;
 } */
 
-.accordion {
+/* .accordion {
   position: absolute;
   top: 10px;
   right: 10px;
   width: fit-content;
   font-size: 10px;
   height: 30px;
-}
+} */
 /* #panel {
   height: 0 ;
   padding: 0;
@@ -157,10 +157,9 @@ h3 {
   height: auto;
   width: auto !important;
 }
-.storage-section-container .panel {
-  height: 0;
+.storage-section-container .movie-card-body {
+  height: 100%;
   width: auto;
-  padding:0;
 }
 
 #empty-storage-btn {

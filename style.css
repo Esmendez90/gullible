@@ -10,9 +10,6 @@ html {
 .header-main-container {
   position: relative;
 }
-.heading-top {
-  font-size: 3rem;
-}
 video {
   width: 100%;
 }
@@ -33,8 +30,27 @@ video {
     #5700ff 100%
   );
 }
+.header-top-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.heading-top {
+  font-size: 3rem;
+  color: white;
+  font-family: "Arial Black";
+  text-align: center;
+}
 form {
   display: grid;
+}
+.wolf-icon-container img:hover {
+cursor: pointer;
+opacity: 0.6;
 }
 label {
   font-weight: bolder;
@@ -99,12 +115,6 @@ h3 {
   position: relative;
   width: 100%;
 }
-/* i {
-  position: absolute;
-  top: 2%;
-  right: 5%;
-  color: #f9be29;
-} */
 #movieCard img {
   width: 100%;
 }
@@ -141,11 +151,10 @@ h3 {
   height: auto;
   width: auto !important;
 }
-.storage-section-container img:hover{
+.storage-section-container img:hover {
   opacity: 0.9;
   cursor: pointer;
 }
-
 
 #empty-storage-btn {
   width: 100px;
@@ -172,9 +181,6 @@ h3 {
     width: 50% !important;
     margin: auto;
   }
-  .heading-top {
-    font-size: 4rem;
-  }
   form {
     padding-left: 4rem;
     padding-right: 4rem;
@@ -195,6 +201,34 @@ h3 {
     text-align: center;
   }
 }
+@media only screen and (min-width: 992px) {
+  .form-section-container {
+    position: absolute;
+    top: 0;
+    background-color: rgba(14, 13, 13, 0);
+    background-image: none;
+  }
+  .scroll-arrow-container {
+    margin-top: 0rem !important;
+  }
+  .header-top-container {
+    display: block;
+  }
+  .heading-top {
+    text-align: left;
+    margin-left: 2rem;
+  }
+  .form-section-container p {
+    position: relative;
+    right: -50%;
+  }
+  .wolf-icon-container {
+    margin: 0rem auto !important;
+  }
+  .results-section-container {
+    margin-top: 1.5rem;
+  }
+}
 @media only screen and (min-width: 1150px) {
   form {
     padding-left: 6rem;
@@ -203,4 +237,14 @@ h3 {
   .results-section-container #movieCard img {
     width: 25%;
   }
+  .wolf-icon-container {
+    margin: 2rem auto !important;
+  }
+  .form-section-container p {
+    position: relative;
+    right: -68%;
+  }
+  .scroll-arrow-container {
+    margin-top: 1rem !important;
+}
 }

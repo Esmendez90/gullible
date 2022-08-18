@@ -11,7 +11,7 @@ html {
   position: relative;
 }
 .heading-top {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 video {
   width: 100%;
@@ -108,22 +108,6 @@ h3 {
 #movieCard img {
   width: 100%;
 }
-/* .img-expbtn-container {
-  position: relative;
-} */
-
-/* .accordion {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: fit-content;
-  font-size: 10px;
-  height: 30px;
-} */
-/* #panel {
-  height: 0 ;
-  padding: 0;
-}  */
 .movie-card-body {
   padding: 4rem;
   font-size: 1rem;
@@ -157,10 +141,11 @@ h3 {
   height: auto;
   width: auto !important;
 }
-.storage-section-container .movie-card-body {
-  height: 100%;
-  width: auto;
+.storage-section-container img:hover{
+  opacity: 0.9;
+  cursor: pointer;
 }
+
 
 #empty-storage-btn {
   width: 100px;

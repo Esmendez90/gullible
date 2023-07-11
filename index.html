@@ -31,14 +31,8 @@
           </video>
         </div>
 
-        <div class="header-top-container"
-         
-        >
-          <h1
-            class="heading-top"
-          >
-            GULLIBLE
-          </h1>
+        <div class="header-top-container">
+          <h1 class="heading-top">GULLIBLE</h1>
         </div>
       </div>
       <section class="form-section-container">
@@ -48,13 +42,14 @@
         <div
           class="wolf-icon-container"
           style="text-align: center; margin: 2rem auto"
-        ><a href="https://esmendez90.github.io/portfolio/" target="_blank">
-          <img
-            src="./assets/sheepwolf.png"
-            alt="sheep wolf icon"
-            class="d-block w-100"
-          />
-        </a>
+        >
+          <a href="https://esmendez90.github.io/portfolio/" target="_blank">
+            <img
+              src="./assets/sheepwolf.png"
+              alt="sheep wolf icon"
+              class="d-block w-100"
+            />
+          </a>
         </div>
         <div class="form-container">
           <form id="myForm">
@@ -98,65 +93,10 @@
     </div>
 
     <div class="main-content">
-      <!-- Form container -->
-      <!-- <section class="form-section-container">
-        <p style="color: white; text-align: center; font-weight: 600">
-          Get your favorite movie or series information
-        </p>
-        <div
-          class="wolf-icon-container"
-          style="text-align: center; margin: 2rem auto"
-        >
-          <img
-            src="./assets/sheepwolf.png"
-            alt="sheep wolf icon"
-            class="d-block w-100"
-          />
-        </div>
-        <div class="form-container">
-          <form id="myForm">
-            <label for="title">Title </label>
-            <input type="text" id="title" required />
-            <label for="year">Year </label>
-            <input type="text" id="year" />
-            <div class="btn-container">
-              <button id="search-Btn" type="submit">Search</button>
-            </div>
-          </form>
-        </div>
-        <div class="scroll-arrow-container">
-          <a href="#movieCard">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              x="0px"
-              y="0px"
-              width="64px"
-              height="64px"
-              viewBox="0 0 64 64"
-              stroke-width="2"
-            >
-              <g stroke-width="2" transform="translate(0, 0)">
-                <polyline
-                  class="arrow-path"
-                  fill="none"
-                  stroke="#FFFFFF"
-                  stroke-width="2"
-                  stroke-linecap="square"
-                  stroke-miterlimit="10"
-                  points="44,26 32,38 20,26"
-                  stroke-linejoin="miter"
-                ></polyline>
-              </g>
-            </svg>
-          </a>
-        </div>
-      </section> -->
-
       <!-- Movie card container -->
       <section class="results-section-container">
         <div class="h3-container">
-          <h3>SEARCH RESULTS</h3>
+          <h3 class="movie-title">RESULTS</h3>
         </div>
         <div id="movieCard-container"></div>
       </section>
@@ -174,17 +114,22 @@
     <!-- Footer -->
     <section>
       <div class="row footer-container">
-        <div class="logo-container" style="width: 50%; margin: auto">
+        <div
+          class="text-footer-container"
+          style="
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <p style="margin-right: 8px; margin-bottom: 0">Designed by</p>
           <img
             class="logo"
             src="./assets/logo.png"
             alt="logo"
             style="width: 85px"
           />
-        </div>
-        <div class="text-footer-container" style="width: 50%">
-          <h5>Designed by:</h5>
-          <p style="margin-bottom: 0">Esteban Mendez</p>
         </div>
       </div>
     </section>

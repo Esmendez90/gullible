@@ -33,17 +33,22 @@ function getData(title, year) {
 }
 
 function renderCard(data) {
+ $(".movie-title")[0].innerHTML = `<h1>${data.Title.toUpperCase()}</h1`;
+  //  console.log(y);
   $("#movieCard-container").append(`
     <div id="movieCard">
          <img src="${data.Poster}" alt=${data.Title}/>
       <div class="movie-card-body">
-        <h1>${data.Title}</h1>
+        <p><b>Country:</b> ${data.Country}</p>
         <p><b>Genre:</b> ${data.Genre}</p>
         <p><b>Actors:</b> ${data.Actors}</p>
+        <p><b>Awards:</b> ${data.Awards}</p>
         <p><b>Year:</b> ${data.Year}</p>
         <p><b>Rated:</b> ${data.Rated}</p>
         <p><b>Plot:</b> ${data.Plot}</p>
+        <p><b>Writer:</b> ${data.Writer}</p>
         <p><b>Director:</b> ${data.Director}</p>
+        <p><b>Language:</b> ${data.Language}</p>
         <p><b>Runtime:</b> ${data.Runtime}</p>
     </div>
   </div>

@@ -15,6 +15,7 @@ function getData(title, year) {
       `http://www.omdbapi.com/?apikey=b00e7121&t=${title}&y=${year}&plot=full`
     )
     .then((response) => {
+      console.log(response)
       if (response.data.Response === "False") {
         alert("Error! Please, try again. Check your spelling.");
       } else {

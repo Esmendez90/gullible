@@ -5,7 +5,7 @@ let movieCardEl = document.getElementById("imgBtn");
 
 function getData(title, year) {
   $("#movieCard").remove();
-  document.querySelector("#movieCard-container").scrollIntoView({
+  document.querySelector(".results-section-container").scrollIntoView({
     behavior: "smooth",
     block: "start",
     inline: "start",
@@ -15,7 +15,7 @@ function getData(title, year) {
       `http://www.omdbapi.com/?apikey=b00e7121&t=${title}&y=${year}&plot=full`
     )
     .then((response) => {
-      console.log(response)
+       console.log(response);
       if (response.data.Response === "False") {
         alert("Error! Please, try again. Check your spelling.");
       } else {
@@ -23,6 +23,7 @@ function getData(title, year) {
         let storage = JSON.parse(localStorage.getItem("saved-movies-series"));
         storage.unshift(response.data);
         localStorage.setItem("saved-movies-series", JSON.stringify(storage));
+        getRating(response.data.Ratings[0].Value);
         renderCard(response.data);
         renderStorage();
       }
@@ -32,20 +33,38 @@ function getData(title, year) {
     });
 }
 
+function getRating(rating) {
+  $("#ratings").empty();
+  let ratingCalc = Math.trunc(rating.split("/")[0] / 2);
+
+  for (let i = 0; i < ratingCalc; i++) {
+    $("#ratings").append(`<i class="fa fa-star" style="color:#ffd43b"></i>`);
+  }
+
+  if (ratingCalc < 5) {
+    for (let b = ratingCalc; b < 5; b++) {
+      $("#ratings").append(
+        `<i class="fa fa-star" style="color:#c9c7c794"></i>`
+      );
+    }
+  }
+}
+
 function renderCard(data) {
- $(".movie-title")[0].innerHTML = `<h1>${data.Title.toUpperCase()}</h1`;
-  //  console.log(y);
+  $(".movie-title")[0].innerHTML = `<h1>${data.Title.toUpperCase()}</h1`;
+
   $("#movieCard-container").append(`
     <div id="movieCard">
          <img src="${data.Poster}" alt=${data.Title}/>
       <div class="movie-card-body">
         <p><b>Country:</b> ${data.Country}</p>
         <p><b>Genre:</b> ${data.Genre}</p>
-        <p><b>Actors:</b> ${data.Actors}</p>
         <p><b>Awards:</b> ${data.Awards}</p>
-        <p><b>Year:</b> ${data.Year}</p>
+        <p><b>Released:</b> ${data.Released}</p>
+        <p><b>Box Office:</b> ${data.BoxOffice}</p>
         <p><b>Rated:</b> ${data.Rated}</p>
         <p><b>Plot:</b> ${data.Plot}</p>
+        <p><b>Actors:</b> ${data.Actors}</p>
         <p><b>Writer:</b> ${data.Writer}</p>
         <p><b>Director:</b> ${data.Director}</p>
         <p><b>Language:</b> ${data.Language}</p>
@@ -77,18 +96,13 @@ $("#search-Btn").on("click", function (event) {
   year = $("#year").val().trim().toLowerCase();
 
   getData(title, year);
-  // document.querySelector("#movieCard-container").scrollIntoView({
-  //   behavior: "smooth",
-  //   block: "start",
-  //   inline: "start",
-  // });
+
   document.getElementById("myForm").reset();
-  // $("#movieCard").remove();
 });
 
 $("#empty-storage-btn").on("click", (event) => {
   event.preventDefault();
-  console.log("clear");
+  // console.log("clear");
   localStorage.setItem("saved-movies-series", JSON.stringify([]));
   location.reload();
 });

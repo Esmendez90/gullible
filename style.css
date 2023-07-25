@@ -31,20 +31,19 @@ html {
     #5700ff 100%
   );
 }
-/* .header-top-container {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-} */
 .heading-top {
   font-size: 3rem;
   color: #ffffffba;
   font-family: "Arial Black";
   text-align: center;
+}
+h1 {
+  color: #5700ff;
+  text-shadow: 0 0 10px pink;
+  /* text-align: center; */
+  font-weight: bolder;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
 }
 .form-section-container p {
   margin: 20px;
@@ -137,14 +136,7 @@ h3 {
   /* background-color: #9bccfe21; */
   color: #374458;
 }
-h1 {
-  color: #5700ff;
-  text-shadow: 0 0 10px pink;
-  text-align: center;
-  font-weight: bolder;
-  letter-spacing: 3px;
-  margin-bottom: 1rem;
-}
+
 .fa-star {
   margin: 0 4px;
   font-size: 23px;

@@ -51,7 +51,7 @@ function getRating(rating) {
 }
 
 function renderCard(data) {
-  $(".movie-title")[0].innerHTML = `<h1>${data.Title.toUpperCase()}</h1`;
+  $(".movie-title")[0].innerHTML = `<p class=movie-title-card>${data.Title.toUpperCase()}</p`;
 
   $("#movieCard-container").append(`
     <div id="movieCard">

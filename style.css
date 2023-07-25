@@ -75,17 +75,20 @@ input {
 .btn-container {
   background-color: white;
   border-radius: 10px;
-  /* margin-top: 2rem; */
+}
+.btn-container, #search-Btn {
+  border: 0.1px solid white;
 }
 button,
 #delete-btn {
   width: 100%;
   height: 50px;
-  background-color: #5700ffcf;
+  background-color: #6104f8;
   border-radius: 10px;
   color: white;
   font-weight: bold;
   letter-spacing: 2px;
+  border: none;
 }
 #delete-btn {
   position: absolute;
@@ -121,8 +124,7 @@ h3 {
   font-weight: bold;
 }
  /* #movieCard {
-  position: relative;
-  width: 100%;
+  width: 300px;
 } */
 #movieCard img {
   width: 90%;
@@ -132,11 +134,12 @@ h3 {
 .movie-card-body {
   padding: 4rem;
   font-size: 1rem;
-  background-color: #9bccfe21;
+  /* background-color: #9bccfe21; */
   color: #374458;
 }
 h1 {
   color: #5700ff;
+  text-shadow: 0 0 10px pink;
   text-align: center;
   font-weight: bolder;
   letter-spacing: 3px;
@@ -152,9 +155,10 @@ h1 {
 }
 .storage-section-container {
   margin: 2rem auto;
-  padding-bottom: 3rem;
-  margin-bottom: 0;
-  background-color: #9bfed721;
+  /* padding-bottom: 3rem;
+  margin-bottom: 0; */
+  background-color: #9bccfe21;
+  /* background-color: #9bfed721; */
   display: grid;
 }
 
@@ -166,15 +170,15 @@ h1 {
 #storage-container #movieCard {
   position: relative;
   width: fit-content;
-  height: 441px;
-  box-shadow: 0 0 15px black;
-  margin: 14px;
+  height: 300px;
+  box-shadow: 1px 2px 8px #5700ffcf;;
+  margin: 7px;
 }
 /* .storage-section-container #storage-container div:not(:last-child) {
   margin-right: 2px;
 } */
 .storage-section-container img {
-  height: auto;
+  height: 300px;
   width: auto !important;
 }
 .storage-section-container img:hover {

@@ -76,7 +76,7 @@ form {
   transition: opacity 0.2s;
   transition-timing-function: ease-in-out;
 }
-.wolf-icon-container img:hover{
+.wolf-icon-container img:hover {
   cursor: pointer;
   opacity: 0.6;
 }
@@ -95,7 +95,8 @@ input {
   background-color: white;
   border-radius: 10px;
 }
-.btn-container, #search-Btn {
+.btn-container,
+#search-Btn {
   border: 0.1px solid white;
 }
 button,
@@ -120,9 +121,9 @@ button,
   /* margin-top: 2rem !important; */
 }
 .scroll-arrow-container polyline {
-  animation: mymove 2s infinite !important;
+  -webkit-animation: mymove 2s infinite !important;
 }
-@keyframes mymove {
+@-webkit-keyframes mymove {
   0% {
     stroke: grey;
   }
@@ -142,23 +143,22 @@ h3 {
   color: #374458;
   font-weight: bold;
 }
- /* #movieCard {
+/* #movieCard {
   width: 300px;
 } */
-.movie-title-card{
-  
-    color: #5700ff;
-    /* text-shadow: 0 0 10px pink; */
-    /* text-align: center; */
-    font-weight: bolder;
-    letter-spacing: 3px;
-    margin-bottom: 1rem;
+.movie-title-card {
+  color: #5700ff;
+  /* text-shadow: 0 0 10px pink; */
+  /* text-align: center; */
+  font-weight: bolder;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
 }
 #movieCard img {
-  width: 90%;
+  width: auto;
   margin: auto;
   display: flex;
-} 
+}
 .movie-card-body {
   padding: 4rem;
   font-size: 1rem;
@@ -192,7 +192,7 @@ h3 {
   position: relative;
   width: fit-content;
   height: 300px;
-  box-shadow: 1px 2px 8px #5700ffcf;;
+  box-shadow: 1px 2px 8px #5700ffcf;
   margin: 7px;
 }
 /* .storage-section-container #storage-container div:not(:last-child) {
@@ -200,12 +200,30 @@ h3 {
 } */
 .storage-section-container img {
   height: 300px;
-  width: auto !important;
+  transition: height 0.2s;
+  transition-timing-function: ease-in-out;
+  /* width: auto !important; */
 }
 .storage-section-container img:hover {
   opacity: 0.9;
   cursor: pointer;
+  height: 310px;
+  /* animation: zoomin 0.3s; */
+
+  /* -webkit-animation: zoomin 0.5s;
+  -webkit-animation-direction:normal;
+  -webkit-animation-timing-function: ease-in-out; */
 }
+/* @-webkit-keyframes zoomin {
+  0% {
+    width: auto;
+    height: 300px;
+  }
+  100% {
+    width: 210px;
+    height: 305px;
+  }
+} */
 
 #empty-storage-btn {
   width: 120px;
@@ -227,7 +245,7 @@ h3 {
   color: white;
 }
 @media only screen and (min-width: 412px) {
-  .heading-top-container > h1{
+  .heading-top-container > h1 {
     font-size: 2.5rem;
   }
   @-webkit-keyframes breathe {
@@ -238,7 +256,6 @@ h3 {
       font-size: 2.6rem;
     }
   }
-  
 }
 @media only screen and (min-width: 768px) {
   .heading-top-container > h1 {

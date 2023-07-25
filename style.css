@@ -41,10 +41,10 @@ html {
   font-family: "Arial Black";
   text-align: center; */
 }
-h1 {
+.heading-top-container > h1 {
   /* color: #5700ff; */
   text-shadow: 0 0 10px pink;
-  /* text-align: center; */
+  text-align: center;
   font-size: 2.2rem;
   color: #ffffffba;
   font-family: "Arial Black";
@@ -226,7 +226,7 @@ h3 {
   color: white;
 }
 @media only screen and (min-width: 412px) {
-  h1{
+  .heading-top-container > h1{
     font-size: 2.5rem;
   }
   @keyframes breathe {
@@ -240,7 +240,7 @@ h3 {
   
 }
 @media only screen and (min-width: 768px) {
-  .h1 {
+  .heading-top-container > h1 {
     font-size: 5rem;
   }
   @keyframes breathe {
